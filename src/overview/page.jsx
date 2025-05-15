@@ -13,7 +13,7 @@ const Overview = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <StatCard name="Total Sales" icon={DollarSign} value="$5,240" />
+          <StatCard name="Total Sales" icon={DollarSign} value="$184,240" />
           <StatCard name="Total Clients" icon={Users} value="1,240" />
           <StatCard name="Total Product" icon={ShoppingBag} value="640" />
           <StatCard name="Stock" icon={SquareActivity} value="12,845" />
