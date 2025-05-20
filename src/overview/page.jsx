@@ -3,6 +3,10 @@ import StatCard from "@/components/StatCard";
 import { DollarSign, ShoppingBag, SquareActivity, Users } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
+import SalesOverviewChart from "@/components/SalesOverviewChart";
+import CategoryDistributionChart from "@/components/CategoryDistributionChart";
+import OrderDistributionChart from "@/components/OrderDistributionChart";
+import ProductPerformanceChart from "@/components/ProductPerformanceChart";
 const Overview = () => {
   return (
     <div className="flex-1 overflow-auto relative z-10">
@@ -18,6 +22,12 @@ const Overview = () => {
           <StatCard name="Total Product" icon={ShoppingBag} value="640" />
           <StatCard name="Stock" icon={SquareActivity} value="12,845" />
         </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <SalesOverviewChart />
+          <CategoryDistributionChart />
+          <OrderDistributionChart />
+          <ProductPerformanceChart />
+        </div>
       </main>
     </div>
   );
