@@ -32,6 +32,21 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 650) {
+        setIsSidebarOpen(false);
+      } else {
+        setIsSidebarOpen(true);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     fetch("/data/data.json")
       .then((res) => {
         if (!res.ok) {
@@ -60,7 +75,7 @@ const Sidebar = () => {
         >
           <Menu size={32} />
         </button>
-        <nav className="mt-16 flex-grow space-y-1">
+        <nav className="mt-14 flex-grow space-y-1">
           {sidebarItems?.map((item) => {
             const IconComponent = icons[item.icon];
             return (
